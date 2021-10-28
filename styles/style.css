@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: poppins, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #22252c;
+  background-size: cover;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-container {
+  max-width: 1060px;
+  margin: auto;
+}
+
+.main-nav {
+  width: 50%;
+  font-size: 1.1em;
+}
+
+.main-nav > a {
+  padding: 5px 13px;
+  border-radius: 2em;
+  transition: 0.5s;
+}
+
+.main-nav > :not(:last-child) {
+  margin-inline-end: 40px;
+}
+
+.gradient-background {
+  background-image: linear-gradient(90deg, #0f9ab4, #30bb72);
+  border-radius: 3em;
+}
+.main-header {
+  margin: 15px 0 20px;
+}
+
+.logo {
+  margin: 20px 5px;
+  height: 25px;
+}
+
+.img-container {
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-auto-rows: 200px;
+  gap: 30px;
+  padding: 0px 55px 30px;
+}
+
+.gallery-container {
+  background-color: #383b42;
+  border: 5px solid #383b42;
+  border-radius: 10px;
+  height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.gallery-container .search-container {
+  position: relative;
+  background-color: #22252c;
+  height: 50px;
+  width: 270px;
+  flex-grow: 1;
+  border-radius: 2em;
+}
+
+.gallery-container .search-container .search {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: #909193;
+  border: none;
+  font-size: 1em;
+  padding-left: 50px;
+  outline: none;
+}
+
+.gallery-container .hot-words-container {
+  height: 50px;
+  width: 270px;
+  flex-grow: 1;
+  border-radius: 2em;
+}
+
+.gallery-container .hot-words {
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 50px;
+  color: white;
+  padding: 0px 15px;
+  background-color: #87898d;
+  overflow: hidden;
+  border-radius: 2em;
+}
+
+.gallery-header {
+  padding: 10px;
+  margin-bottom: 35px;
+}
+
+.gallery-header > :not(:last-child) {
+  margin-inline-end: 1.6rem;
+}
+
+.meme-text {
+  display: block;
+  font-size: 1.125em;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 2em;
+  border: 5px outset;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.control-panel {
+  background-color: #383b42;
+  width: 500px;
+  height: 520px;
+  padding: 15px 30px;
+}
+
+.control-panel button:hover {
+  cursor: pointer;
+}
+
+.font-editor {
+  background-color: #19a59f;
+  padding: 15px;
+  gap: 15px 30px;
+  grid-template-columns: repeat(5, 1fr);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.img-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: filter 0.3s, border 0.3s, box-shdow 0.3s;
+}
+
+.img-item:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px white;
+  filter: contrast(120%);
+}
+.canvas-container {
+  border-radius: 30px;
+  width: 60vw;
+  height: 80vh;
+  cursor: grab;
+}
+
+.canvas-container-outline {
+  border-radius: 30px;
+  height: 335.4px;
+  padding: 7px;
+  background-color: rgba(255, 255, 255, 0.116);
+  width: 500px;
+}
+
+/* BUTTONS */
+
+.ctrl-btn {
+  border-radius: 10px;
+  border: none;
+  padding: 0px;
+  width: 55px;
+  height: 55px;
+  font-family: poppins-bold, sans-serif;
+  font-size: 2em;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.ctrl-btns > :not(:last-child) {
+  margin-inline-end: 20px;
+}
+
+.gallery-container .btn-more {
+  color: white;
+  font-size: 1em;
+  padding: 5px 25px;
+  height: 35px;
+}
+
+.fa-btn {
+  font-family: fa-solid;
+}
+
+.btn-export {
+  width: 45%;
+  padding: 7px 0;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.25em;
+  font-family: poppins, sans-serif;
+  transition: box-shadow 0.3s;
+}
+
+.share {
+  background-color: #1e7cd3;
+  
+}
+
+.download {
+  background-color: #8f44bb;
+}
+
+/* HELPERS */
+
+.grid {
+  display: grid;
+}
+
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.wrap {
+  flex-wrap: wrap;
+}
+
+.flex.space-between {
+  justify-content: space-between;
+}
+
+.hide {
+  display: none;
+}
+
+.clean-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* SCROLL BAR */

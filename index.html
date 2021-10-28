@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Meme Gen</title>
+  </head>
+  <body onload="onInit()">
+    <!-- <div class="main-screen"></div> -->
+    <header class="main-header gradient-background">
+      <div class="main-container flex align-center space-between">
+        <img class="logo" src="images/LOGO.png" />
+        <ul class="main-nav clean-list flex justify-center">
+          <li><a class="btn-gallery" href="#">Gallery</a></li>
+          <li><a class="btn-about" href="#">About</a></li>
+          <li><a class="btn-about" href="#">Hello</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main-container">
+      <section class="meme-editor main-container flex space-between hide">
+        <div class="canvas-container-outline">
+          <div class="canvas-container">
+            <canvas width="486" height="321"></canvas>
+          </div>
+        </div>
+        <section class="control-panel">
+            <label for="meme-txt"></label>
+            <input
+              class="meme-text"
+              type="text"
+              name="meme-text"
+              oninput="writeMemeTxt(this)"
+            />
+            <div class="ctrl-btns flex justify-center">
+              <button
+                class="ctrl-btn  switch"
+                onclick="onSwitchLines(event)"
+              >
+                S
+              </button>
+              <button
+                class="ctrl-btn  up"
+                onclick="onMoveText(event, -5)"
+              >
+                U
+              </button>
+              <button
+                class="ctrl-btn  down"
+                onclick="onMoveText(event, 5)"
+              >
+                D
+              </button>
+            </div>
+            <div class="font-editor grid">
+              <button
+                class="ctrl-btn bigger"
+                onclick="onChangeFontSize(event,2)"
+              >
+                +
+              </button>
+              <button
+                class="ctrl-btn bigger"
+                onclick="onChangeFontSize(event,-2)"
+              >
+                -
+              </button>
+            </div>
+            <form class="download-share-btns flex space-between">
+              <a class="btn-export share" href="">Share</a>
+              <a class="btn-export download" href="#" onclick="onDownLoadImg(this)" download="Funny-meme.jpg">Download</a>
+            </form>
+        </section>
+      </section>
+      <section class="gallery-container main-container">
+          <header class="gallery-header flex wrap justify-center align-center">
+              <form class="search-container">
+                  <input type="text" name="search" class="search" placeholder="Search">
+              </form>
+              <div class="hot-words-container">
+                <ul class="hot-words grid clean-list align-center">
+                    <li>Funny</li>
+                    <li>Animal</li>
+                    <li>Men</li>
+                    <li>Women</li>
+                    <li>Smile</li>
+                </ul>
+            </div>
+            <button class="btn-more gradient-background">More</button>
+          </header>
+        <section class="img-container grid align-center justify-center">
+          <img class="img-item" src="images\1.jpg" onclick="onPickImage(1)" />
+          <img class="img-item" src="images\2.jpg" onclick="onPickImage(2)" />
+          <img class="img-item" src="images\3.jpg" onclick="onPickImage(3)" />
+          <img class="img-item" src="images\4.jpg" onclick="onPickImage(4)" />
+          <img class="img-item" src="images\5.jpg" onclick="onPickImage(5)" />
+          <img class="img-item" src="images\6.jpg" onclick="onPickImage(6)" />
+          <img class="img-item" src="images\7.jpg" onclick="onPickImage(7)" />
+          <img class="img-item" src="images\8.jpg" onclick="onPickImage(8)" />
+          <img class="img-item" src="images\9.jpg" onclick="onPickImage(9)" />
+          <img class="img-item" src="images\10.jpg" onclick="onPickImage(10)" />
+          <img class="img-item" src="images\11.jpg" onclick="onPickImage(11)" />
+          <img class="img-item" src="images\12.jpg" onclick="onPickImage(12)" />
+          <img class="img-item" src="images\13.jpg" onclick="onPickImage(13)" />
+          <img class="img-item" src="images\14.jpg" onclick="onPickImage(14)" />
+          <img class="img-item" src="images\15.jpg" onclick="onPickImage(15)" />
+          <img class="img-item" src="images\16.jpg" onclick="onPickImage(16)" />
+          <img class="img-item" src="images\17.jpg" onclick="onPickImage(17)" />
+          <img class="img-item" src="images\18.jpg" onclick="onPickImage(18)" />
+        </section>
+      </section>
+    </main>
+
+    <script src="js/services/button-service.js"></script>
+    <script src="js/services/draw-service.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
