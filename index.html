@@ -13,7 +13,7 @@
       <div class="main-container flex align-center space-between">
         <img class="logo" src="images/LOGO.png" />
         <ul class="main-nav clean-list flex justify-center">
-          <li><a class="btn-gallery" href="#">Gallery</a></li>
+          <li><a class="btn-gallery" href="#" onclick="onOpenGallery(event)">Gallery</a></li>
           <li><a class="btn-about" href="#">About</a></li>
           <li><a class="btn-about" href="#">Hello</a></li>
         </ul>
@@ -67,6 +67,14 @@
               >
                 -
               </button>
+              <select class="font-selector" onchange="onChangeFont(event,this)">
+                <option value="impact">impact</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Comic sans MS">Comic sans MS</option>
+                <option value="WildWest">WildWest</option>
+                <option value="Bedrock">Bedrock</option>
+              </select>
             </div>
             <form class="download-share-btns flex space-between">
               <a class="btn-export share" href="">Share</a>
@@ -81,11 +89,11 @@
               </form>
               <div class="hot-words-container">
                 <ul class="hot-words grid clean-list align-center">
-                    <li>Funny</li>
-                    <li>Animal</li>
-                    <li>Men</li>
-                    <li>Women</li>
-                    <li>Smile</li>
+                    <li><a href="">Funny</a></li>
+                    <li><a href="">Animal</a></li>
+                    <li><a href="">Men</a></li>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Smile</a></li>
                 </ul>
             </div>
             <button class="btn-more gradient-background">More</button>

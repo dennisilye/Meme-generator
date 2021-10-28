@@ -20,5 +20,19 @@ function onSwitchLines(ev) {
     ev.preventDefault();
     if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1;
     else gMeme.selectedLineIdx = 0;
-    
+
+}
+
+function onChangeFont(ev, elFont) {
+    ev.preventDefault();
+    const font = elFont.value;
+    gCurrFont = font;
+    drawImage();
+
+}
+
+function onOpenGallery(ev){
+    ev.preventDefault();
+    document.querySelector('.gallery-container').classList.remove('hide');
+    document.querySelector('.meme-editor').classList.add('hide');
 }

@@ -5,7 +5,6 @@ var gCanvasY;
 var gCurrFont = 'impact'
 var gElCanvas;
 var gCtx;
-var gIsDragging = false;
 var gStartPos;
 var gKeywords = { 'happy': 12, 'funny puk': 1 }
 var gImgs = [{ id: 1, url: 'img/popo.jpg', keywords: ['happy'] }];
@@ -17,14 +16,11 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d');
     gCanvasX = gElCanvas.width;
     gCanvasY = gElCanvas.height;
- 
-
     addMouseListeners();
     drawImage();
 }
 
 function onPickImage(imgId) {
-    console.log(imgId);
     gMeme.selectedImgId = imgId;
     drawImage();
     document.querySelector('.gallery-container').classList.add('hide');
@@ -44,8 +40,8 @@ function onUp() {
 }
 
 function onDown(ev) {
-    console.log('ondown');
     const pos = getEvPos(ev)
+    if (findClickedText(pos) !== -1) gMeme.selectedLineIdx = findClickedText(pos);
     if (!isTextClicked) return;
     gIsDrag = true;
     gStartPos = pos;
@@ -53,8 +49,7 @@ function onDown(ev) {
 }
 
 function onMove(ev) {
-    console.log('move');
-    const line = gMeme.lines[gMeme.selectedLineIdx]
+    const line = gMeme.lines[gMeme.selectedLineIdx];
     if (gIsDrag) {
         const pos = getEvPos(ev)
          const dx = pos.x - gStartPos.x;
@@ -81,5 +76,15 @@ function getEvPos(ev) {
 function onDownLoadImg(elLink) {
     var imgContent = gElCanvas.toDataURL('image/jpeg');
     elLink.href = imgContent;
+}
+
+function findClickedText(clickedPos) {
+    const lineRadius = 30;
+    return gMeme.lines.findIndex(line => {
+     const { pos } = line;
+     const distance = Math.sqrt((pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2) 
+     return distance <= line.size + lineRadius;
+
+    })
 }
 

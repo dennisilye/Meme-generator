@@ -185,6 +185,14 @@ a {
   font-family: poppins-bold, sans-serif;
   font-size: 2em;
   vertical-align: top;
+
+}
+
+.gallery-header a:hover {
+  cursor: pointer;
+}
+
+.ctrl-btns {
   margin-bottom: 20px;
 }
 
@@ -211,6 +219,17 @@ a {
   font-size: 1.25em;
   font-family: poppins, sans-serif;
   transition: box-shadow 0.3s;
+}
+
+.font-selector {
+  grid-row: 2;
+  cursor: pointer;
+  border-radius: 10px;
+  grid-column: span 3;
+  font-size: 1.5em;
+  padding-left: 20px;
+  border: none;
+  outline: none;
 }
 
 .share {
