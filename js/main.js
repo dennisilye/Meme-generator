@@ -2,7 +2,7 @@
 
 var gCanvasX;
 var gCanvasY;
-var gCurrFont = 'impact'
+var gCurrFont = 'impact';
 var gElCanvas;
 var gCtx;
 var gStartPos;
@@ -22,10 +22,20 @@ function onInit() {
 
 function onPickImage(imgId) {
     gMeme.selectedImgId = imgId;
+    adjustCanvasHeight(imgId);
     drawImage();
     document.querySelector('.gallery-container').classList.add('hide');
     document.querySelector('.meme-editor').classList.remove('hide');
 
+}
+
+function adjustCanvasHeight(imgIdx) {
+    var img = new Image();
+    img.src = `./images/${imgIdx}.jpg`
+    var canvasHeight= (img.height * gCanvasX) / img.width;
+    document.querySelector('canvas').height = canvasHeight;
+    document.querySelector('.canvas-container-outline').style.height = canvasHeight + 20 +"px";
+    
 }
 
 function addMouseListeners() {
