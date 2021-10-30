@@ -54,7 +54,7 @@ function onCreateNewLine(ev) {
         txt: 'Hello',
         size: 40,
         align: 'center',
-        color: 'white',
+        color: '#fdffff',
         pos: {
             x: gCanvasX / 2,
             y,
@@ -72,6 +72,7 @@ function onDeleteLine(ev) {
     drawImage();
 
 }
+
 
 function onChangeColor(ev, elColor) {
     ev.preventDefault();
