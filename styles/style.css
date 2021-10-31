@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "fa";
-  src: url("./fonts/sort-solid.svg");
-}
-
 html {
   font-family: poppins, sans-serif;
 }
@@ -68,6 +63,10 @@ a {
 .logo {
   margin: 20px 5px;
   height: 25px;
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 .img-container {
@@ -201,6 +200,52 @@ a {
   margin-top: 20px;
 }
 
+.saved-container {
+  width: 100%;
+  border: 3px solid white;
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6c6f77e1;
+  padding: 20px 10px;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 20px;
+  transition: opacity 0.5s, visibility 0.5s;
+  box-shadow: 0 10px 10px #000000ab;
+  
+}
+
+.saved-memes {
+  grid-template-columns: repeat(auto-fit, 150px);
+  grid-auto-rows: 150px;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.saved-memes img {
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s, border 0.3s, box-shdow 0.3s;
+}
+
+.saved-memes img:hover {
+  cursor: pointer;
+
+}
+
+body.open-memes .saved-container {
+  opacity: 1;
+  visibility: visible;
+}
+body.open-memes .saved-memes > * {
+  display: inherit;
+}
+
 /* BUTTONS */
 
 .menu-btn {
@@ -211,6 +256,17 @@ a {
   border-radius: 50%;
   border: none;
   outline: none;
+}
+.search-btn {
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-btn:hover {
+  cursor: pointer;
 }
 
 .ctrl-btn {
@@ -286,6 +342,20 @@ a {
   background-color: #8f44bb;
 }
 
+.close-saved {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.747);
+  background-color: transparent;
+}
+
+.closed-saved:hover {
+  cursor: pointer;
+}
+
 /* HELPERS */
 
 .grid {
@@ -343,6 +413,7 @@ a {
   body.open-menu .main-nav {
     transform: translateX(0);
   }
+  
 
   .main-nav {
     position: fixed;
@@ -383,13 +454,4 @@ a {
     opacity: 1;
     visibility: visible;
   }
-
-  
 }
-
-/* @media screen and (max-width: 860px) {
-  .main-container{
-    width: 630px;
-  }
-  
-} */

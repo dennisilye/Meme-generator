@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Meme Gen</title>
+    <link rel="icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.D1yzF7LE98mVU152oH__sQHaE7%26pid%3DApi&f=1" type="image/icon type">
   </head>
   <body onload="onInit()">
     <div class="main-screen screen" onclick="onToggleMenu(event)"></div>
     <header class="main-header gradient-background">
       <div class="main-container flex align-center space-between">
-        <img class="logo" src="images/LOGO.png" />
+        <img class="logo" src="images/LOGO.png" onclick="onOpenGallery(event)" />
         <ul class="main-nav clean-list flex justify-center">
           <li>
             <a class="btn-gallery" href="#" onclick="onOpenGallery(event)"
@@ -19,7 +20,7 @@
             >
           </li>
           <li><a class="btn-about" href="#">About</a></li>
-          <li><a class="btn-about" href="#">Memes</a></li>
+          <li><a class="btn-about" href="#" onclick="onToggleSavedMemes(event)">Memes</a></li>
         </ul>
         <button class="menu-btn" onclick="onToggleMenu(event)">☰</button>
       </div>
@@ -41,19 +42,19 @@
           />
           <div class="ctrl-btns flex justify-center">
             <button class="ctrl-btn switch" onclick="onSwitchLines(event)">
-              S
+              <i class="fas fa-arrows-alt-v"></i>
             </button>
             <button class="ctrl-btn add-line" onclick="onCreateNewLine(event)">
-              Add
+              <i class="fas fa-plus"></i>
             </button>
             <button class="ctrl-btn delete-line" onclick="onDeleteLine(event)">
-              Del
+              <i class="fas fa-trash"></i>
             </button>
             <button class="ctrl-btn up" onclick="onMoveText(event, -5)">
-              U
+              <i class="fas fa-arrow-up"></i>
             </button>
             <button class="ctrl-btn down" onclick="onMoveText(event, 5)">
-              D
+              <i class="fas fa-arrow-down"></i>
             </button>
           </div>
           <div class="font-editor grid">
@@ -82,17 +83,19 @@
             </select>
           </div>
           <form class="download-share-btns flex space-between">
-            <a class="btn-export share" href="">Share</a>
+            <a class="btn-export share" href="" onclick="onSaveMeme(event)">Save</a>
             <a
               class="btn-export download"
               href="#"
-              onclick="onDownLoadImg(this)"
+              onclick="onDownLoadMeme(this)"
               download="Funny-meme.jpg"
               >Download</a
             >
           </form>
         </section>
       </section>
+
+      </div>
       <section class="gallery-container main-container">
         <header class="gallery-header flex wrap justify-center align-center">
           <form class="search-container">
@@ -101,54 +104,35 @@
               name="search"
               class="search"
               placeholder="Search"
-            />
+              />
+              <i class="fas fa-search search-btn"></i>
           </form>
           <div class="hot-words-container">
             <ul class="hot-words grid clean-list align-center">
-              <li><a href="">Funny</a></li>
-              <li><a href="">Animal</a></li>
-              <li><a href="">Men</a></li>
-              <li><a href="">Women</a></li>
-              <li><a href="">Smile</a></li>
+              <li><a onclick="sortGalleryBy(event,this)" href="">Funny</a></li>
+              <li><a onclick="sortGalleryBy(event,this)" href="">Animal</a></li>
+              <li><a onclick="sortGalleryBy(event,this)" href="">Men</a></li>
+              <li><a onclick="sortGalleryBy(event,this)" href="">Women</a></li>
+              <li><a onclick="sortGalleryBy(event,this)" href="">Smile</a></li>
             </ul>
           </div>
           <button class="btn-more gradient-background">More</button>
         </header>
-        <section class="img-container grid align-center justify-center">
-          <img class="img-item" src="images\1.jpg" onclick="onPickImage(1)" />
-          <img class="img-item" src="images\2.jpg" onclick="onPickImage(2)" />
-          <img class="img-item" src="images\3.jpg" onclick="onPickImage(3)" />
-          <img class="img-item" src="images\4.jpg" onclick="onPickImage(4)" />
-          <img class="img-item" src="images\5.jpg" onclick="onPickImage(5)" />
-          <img class="img-item" src="images\6.jpg" onclick="onPickImage(6)" />
-          <img class="img-item" src="images\7.jpg" onclick="onPickImage(7)" />
-          <img class="img-item" src="images\8.jpg" onclick="onPickImage(8)" />
-          <img class="img-item" src="images\9.jpg" onclick="onPickImage(9)" />
-          <img class="img-item" src="images\10.jpg" onclick="onPickImage(10)" />
-          <img class="img-item" src="images\11.jpg" onclick="onPickImage(11)" />
-          <img class="img-item" src="images\12.jpg" onclick="onPickImage(12)" />
-          <img class="img-item" src="images\13.jpg" onclick="onPickImage(13)" />
-          <img class="img-item" src="images\14.jpg" onclick="onPickImage(14)" />
-          <img class="img-item" src="images\15.jpg" onclick="onPickImage(15)" />
-          <img class="img-item" src="images\16.jpg" onclick="onPickImage(16)" />
-          <img class="img-item" src="images\17.jpg" onclick="onPickImage(17)" />
-          <img class="img-item" src="images\18.jpg" onclick="onPickImage(18)" />
-          <img class="img-item" src="images\19.jpg" onclick="onPickImage(19)" />
-          <img class="img-item" src="images\20.jpg" onclick="onPickImage(20)" />
-          <img class="img-item" src="images\21.jpg" onclick="onPickImage(21)" />
-          <img class="img-item" src="images\22.jpg" onclick="onPickImage(22)" />
-          <img class="img-item" src="images\23.jpg" onclick="onPickImage(23)" />
-          <img class="img-item" src="images\24.jpg" onclick="onPickImage(24)" />
-          <img class="img-item" src="images\25.jpg" onclick="onPickImage(25)" />
-        </section>
+        <section class="img-container grid align-center justify-center"></section>
       </section>
+      <div class="saved-container main-container">
+        <button class="close-saved" onclick="onToggleSavedMemes(event)">X</button>
+        <div class="saved-memes grid justify-center align-center">
+          <h1>Saved Memes</h1>
+        </div>
     </main>
     <footer class="footer">
       <small>By Dennis.I</small>
     </footer>
-
-    <script src="js/services/button-service.js"></script>
-    <script src="js/services/draw-service.js"></script>
+    <script src="https://kit.fontawesome.com/84b9566613.js" crossorigin="anonymous"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/services/controller.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
