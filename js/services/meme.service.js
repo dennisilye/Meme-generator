@@ -113,16 +113,6 @@ function writeMemeTxt(input) {
 
 }
 
-function isTextClicked(clickedPos) {
-    gMeme.lines.forEach(currLine, id => {
-        if (getClickedLine(clickedPos.x, clickedPos.y, id)) gMeme.selectedLineIdx = id;
-
-    })
-    const line = getCurrLine();
-    const distance = Math.sqrt((line.pos.x - clickedPos.x) ** 2 + (line.pos.y - clickedPos.y) ** 2)
-    return distance <= line.size;
-}
-
 function findClickedText(clickedPos) {
     const lineRadius = 30;
     return gMeme.lines.findIndex(line => {
