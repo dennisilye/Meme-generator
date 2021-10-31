@@ -25,7 +25,7 @@ function onUp() {
 function onDown(ev) {
     const pos = getEvPos(ev)
     if (findClickedText(pos) !== -1) gMeme.selectedLineIdx = findClickedText(pos);
-    if (!isTextClicked) return;
+    else return;
     gIsDrag = true;
     gStartPos = pos;
     document.body.style.cursor = 'grabbing';
